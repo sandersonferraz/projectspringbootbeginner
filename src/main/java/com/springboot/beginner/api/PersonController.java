@@ -20,7 +20,7 @@ public class PersonController {
     }
 
     @PostMapping
-    public void addPerson(Person person) {
+    public void addPerson(@RequestBody Person person) {
         personService.addPerson(person);
     }
 
@@ -39,7 +39,7 @@ public class PersonController {
         personService.deletePerson(id);
     }
 
-    @PutMapping(path = "/{id")
+    @PutMapping(path = "/{id}")
     public void updatePersonById(@PathVariable("id") UUID id, @RequestBody Person personUpdate) {
         personService.updatePerson(id, personUpdate);
     }
